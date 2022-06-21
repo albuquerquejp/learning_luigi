@@ -21,7 +21,7 @@ class ContarPalavras (luigi.Task): # Segunda task que 'pega' (requires) o output
     def run(self):
         
         with self.input().open('r') as ler:
-            palavras = ler.read().splitlines()
+            palavras = ler.read().split()
         
         with self.output().open('w') as f:
             for palavra in palavras:
