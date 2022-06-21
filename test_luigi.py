@@ -10,7 +10,7 @@ class HelloWord (luigi.Task): #Primeira task com a finalidade de criar uma arqui
         with self.output().open('w') as f:
             f.write("Hello World, esse é minha primeira task Luigi\n")
 
-class ContarPalavras (luigi.Task): # Segunda task que 'pega' (requires) o output da primeira e computa quantos caracteres tem no arquivo.
+class ContarPalavras (luigi.Task): # Segunda task que 'pega' (requires) o output da primeira e computa quantos caracteres tem em cada palavra.
     
     def requires(self):
         return HelloWord()
